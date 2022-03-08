@@ -1,22 +1,19 @@
-package basic;
+package basic.dto;
 
-public class Requirement {
+public class AddTeacherDTO extends TeacherDTO {
+  String name;
   private int workingExperiment;
   private int teachingAbilityScore;
   private int classAtmosphereScore;
   private int communicationScore;
   private int studentSatisfaction;
 
-  public Requirement() {
+  public String getName() {
+    return name;
   }
 
-  public Requirement(int workingExperiment, int teachingAbilityScore, int classAtmosphereScore,
-      int communicationScore, int studentSatisfaction) {
-    this.workingExperiment = workingExperiment;
-    this.teachingAbilityScore = teachingAbilityScore;
-    this.classAtmosphereScore = classAtmosphereScore;
-    this.communicationScore = communicationScore;
-    this.studentSatisfaction = studentSatisfaction;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public int getWorkingExperiment() {

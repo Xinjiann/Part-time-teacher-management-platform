@@ -1,14 +1,33 @@
-import utils.Database;
+import basic.Administrator;
+import basic.Center;
+import basic.CourseDirector;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        // load data from txt file
-        String path = "teacher.txt";
-        Database database = new Database();
-        database.loadData(path);
+    public static void main(String[] args) throws IOException {
 
-        database.getTeacherList();
+
+
+        Center center = new Center();
+        CourseDirector courseDirector = center.getCourseDirector();
+        Administrator administrator = center.getAdministrator();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("please choose your character:\n1.course director  2.administrator  3.quit");
+        int input = scanner.nextInt();
+        switch (input) {
+            case 1:
+                courseDirector.generateRequirement(center);
+                administrator.filterList(center);
+                break;
+            case 2:
+                administrator.manageDatabase(scanner, center);
+                break;
+        }
+        scanner.close();
+
 
     }
 }

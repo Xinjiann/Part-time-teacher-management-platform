@@ -1,22 +1,32 @@
-package basic;
+package basic.dto;
 
-public class Requirement {
+public class TeacherDTO {
+
+  int teacherId;
+  String name;
   private int workingExperiment;
   private int teachingAbilityScore;
   private int classAtmosphereScore;
   private int communicationScore;
   private int studentSatisfaction;
 
-  public Requirement() {
+  public TeacherDTO() {
   }
 
-  public Requirement(int workingExperiment, int teachingAbilityScore, int classAtmosphereScore,
-      int communicationScore, int studentSatisfaction) {
-    this.workingExperiment = workingExperiment;
-    this.teachingAbilityScore = teachingAbilityScore;
-    this.classAtmosphereScore = classAtmosphereScore;
-    this.communicationScore = communicationScore;
-    this.studentSatisfaction = studentSatisfaction;
+  public int getTeacherId() {
+    return teacherId;
+  }
+
+  public void setTeacherId(int teacherId) {
+    this.teacherId = teacherId;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public int getWorkingExperiment() {

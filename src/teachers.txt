@@ -1,2 +1,0 @@
-1    test_teacher    25    male    3    math
-2    steve           22    female  0    it
