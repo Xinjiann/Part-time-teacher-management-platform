@@ -1,11 +1,9 @@
 package basic;
 
-import basic.dto.AddTeacherDTO;
-import basic.dto.DeleteTeacherDTO;
-import basic.dto.EditTeacherDTO;
-import basic.dto.FindTeacherDTO;
 import basic.dto.TeacherDTO;
 import event.AddTeacher;
+import event.DeleteTeacher;
+import event.EditTeacher;
 import event.FindTeacher;
 import event.Task;
 import java.util.ArrayList;
@@ -14,11 +12,6 @@ import java.util.Scanner;
 public class Administrator {
 
   public Administrator() {
-  }
-
-  public void handleRequest(TeacherDTO teacherDTO) {
-    System.out.println(teacherDTO.getTeacherId());
-
   }
 
   public void filterList(Center center) {
@@ -51,8 +44,11 @@ public class Administrator {
         this.addTeacher(scanner, teacherDTO);
         break;
       case 2:
+        task = new DeleteTeacher();
         this.deleteTeacher(scanner, teacherDTO);
+        break;
       case 3:
+        task = new EditTeacher();
         this.editTeacher(scanner, teacherDTO);
         break;
       case 4:
@@ -60,20 +56,26 @@ public class Administrator {
         this.findTeacher(scanner, teacherDTO);
         break;
     }
-    assert task != null;
-    task.execute(center, teacherDTO);
+    if (task == null) {
+      System.out.println("input number invalid!");
+    } else {
+      task.execute(center, teacherDTO);
+    }
   }
 
 
   private void deleteTeacher(Scanner scanner, TeacherDTO teacherDTO) {
-
+    System.out.println("Please input the id of the teacher you want to delete: ");
+    teacherDTO.setTeacherId(scanner.nextInt());
   }
 
   private void editTeacher(Scanner scanner, TeacherDTO teacherDTO) {
+    System.out.println("Please input the id of the teacher you want to edit: ");
+    teacherDTO.setTeacherId(scanner.nextInt());
   }
 
   private void findTeacher(Scanner scanner, TeacherDTO teacherDTO) {
-    System.out.println("Please input the teacher's id: ");
+    System.out.println("Please input the id of the teacher you want to find: ");
     teacherDTO.setTeacherId(scanner.nextInt());
   }
 
