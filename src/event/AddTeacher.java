@@ -11,6 +11,7 @@ public class AddTeacher implements Task {
   public void execute(Center center, TeacherDTO teacherDTO) {
     Teacher teacher = new Teacher(teacherDTO);
     ArrayList<Teacher> teachers = center.getTeacherList();
+    teacher.setId(teachers.size()+1);
     teachers.add(teacher);
     center.setTeacherList(teachers);
   }

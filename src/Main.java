@@ -3,6 +3,7 @@ import basic.Center;
 import basic.CourseDirector;
 import java.io.IOException;
 import java.util.Scanner;
+import utils.TeacherListWriter;
 
 public class Main {
 
@@ -28,6 +29,6 @@ public class Main {
         }
         scanner.close();
 
-
+        TeacherListWriter.writeTeacherList(center.getTeacherList());
     }
 }

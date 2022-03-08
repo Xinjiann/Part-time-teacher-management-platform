@@ -6,6 +6,7 @@ import basic.dto.EditTeacherDTO;
 import basic.dto.FindTeacherDTO;
 import basic.dto.TeacherDTO;
 import event.AddTeacher;
+import event.FindTeacher;
 import event.Task;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -39,54 +40,41 @@ public class Administrator {
   }
 
   public void manageDatabase(Scanner scanner, Center center) {
-    TeacherDTO teacherDTO = null;
+    TeacherDTO teacherDTO = new TeacherDTO();;
     Task task = null;
 
-    boolean flag = true;
-    while (flag) {
-      System.out.println("Please choose the action below: \n" + "1. add a teacher  2. delete a teacher  3. edit a teacher  4. find a teacher");
-      int input = scanner.nextInt();
-      switch (input) {
-        case 1:
-          teacherDTO = new TeacherDTO();
-          task = new AddTeacher();
-          this.addTeacher(scanner, teacherDTO);
-          break;
-        case 2:
-          this.findTeacher(scanner);
-          System.out.println(2);
-          break;
-        case 3:
-          this.editTeacher(scanner);
-          break;
-        case 4:
-          this.deleteTeacher(scanner, center);
-          break;
-        case 5:
-          flag = false;
-      }
-
-      assert task != null;
-      task.execute(center, teacherDTO);
+    System.out.println("Please choose the action below: \n" + "1. add a teacher  2. delete a teacher  3. edit a teacher  4. find a teacher");
+    int input = scanner.nextInt();
+    switch (input) {
+      case 1:
+        task = new AddTeacher();
+        this.addTeacher(scanner, teacherDTO);
+        break;
+      case 2:
+        this.deleteTeacher(scanner, teacherDTO);
+      case 3:
+        this.editTeacher(scanner, teacherDTO);
+        break;
+      case 4:
+        task = new FindTeacher();
+        this.findTeacher(scanner, teacherDTO);
+        break;
     }
-
+    assert task != null;
+    task.execute(center, teacherDTO);
   }
 
 
-  private void deleteTeacher(Scanner scanner, Center center) {
-    TeacherDTO teacherDTO = new DeleteTeacherDTO();
-    System.out.println("Please input the teacher id:");
-    int id = scanner.nextInt();
-    teacherDTO.setTeacherId(id);
-    center.getAdministrator().handleRequest(teacherDTO);
+  private void deleteTeacher(Scanner scanner, TeacherDTO teacherDTO) {
+
   }
 
-  private void editTeacher(Scanner scanner) {
-    TeacherDTO teacherDTO = new EditTeacherDTO();
+  private void editTeacher(Scanner scanner, TeacherDTO teacherDTO) {
   }
 
-  private void findTeacher(Scanner scanner) {
-    TeacherDTO teacherDTO = new FindTeacherDTO();
+  private void findTeacher(Scanner scanner, TeacherDTO teacherDTO) {
+    System.out.println("Please input the teacher's id: ");
+    teacherDTO.setTeacherId(scanner.nextInt());
   }
 
   private void addTeacher(Scanner scanner, TeacherDTO teacherDTO) {

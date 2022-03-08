@@ -39,9 +39,10 @@ public class Teacher {
 
   @Override
   public String toString() {
-    return id + "\t\t" + name + "\t\t" + workingExperiment + "\t\t" + teachingAbilityScore + "\t\t"
-        + classAtmosphereScore + "\t\t" + classAtmosphereScore + "\t\t" + studentSatisfaction;
 
+    return String.format("%-6s", id) + String.format("%-16s", name) + String.format("%-6s",
+        workingExperiment) + String.format("%-6s", teachingAbilityScore) + String.format("%-6s",
+        classAtmosphereScore) + String.format("%-6s", communicationScore) + String.format("%-6s", studentSatisfaction);
   }
 
   public int getId() {
