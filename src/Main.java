@@ -20,8 +20,7 @@ public class Main {
         int input = scanner.nextInt();
         switch (input) {
             case 1:
-                courseDirector.generateRequirement(center);
-                administrator.filterList(center);
+                courseDirector.generateRequirement(center, scanner);
                 break;
             case 2:
                 administrator.manageDatabase(scanner, center);

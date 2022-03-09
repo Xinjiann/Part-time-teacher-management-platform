@@ -1,5 +1,5 @@
-workingExperiment: 1
-teachingAbilityScore: 3
+workingExperience: 2
+teachingAbilityScore: 4
 classAtmosphereScore: 3
 communicationScore: 3
 studentSatisfaction: 3

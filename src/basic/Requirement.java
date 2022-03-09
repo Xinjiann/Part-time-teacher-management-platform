@@ -1,7 +1,7 @@
 package basic;
 
 public class Requirement {
-  private int workingExperiment;
+  private int workingExperience;
   private int teachingAbilityScore;
   private int classAtmosphereScore;
   private int communicationScore;
@@ -10,21 +10,21 @@ public class Requirement {
   public Requirement() {
   }
 
-  public Requirement(int workingExperiment, int teachingAbilityScore, int classAtmosphereScore,
+  public Requirement(int workingExperience, int teachingAbilityScore, int classAtmosphereScore,
       int communicationScore, int studentSatisfaction) {
-    this.workingExperiment = workingExperiment;
+    this.workingExperience = workingExperience;
     this.teachingAbilityScore = teachingAbilityScore;
     this.classAtmosphereScore = classAtmosphereScore;
     this.communicationScore = communicationScore;
     this.studentSatisfaction = studentSatisfaction;
   }
 
-  public int getWorkingExperiment() {
-    return workingExperiment;
+  public int getWorkingExperience() {
+    return workingExperience;
   }
 
-  public void setWorkingExperiment(int workingExperiment) {
-    this.workingExperiment = workingExperiment;
+  public void setWorkingExperience(int workingExperience) {
+    this.workingExperience = workingExperience;
   }
 
   public int getTeachingAbilityScore() {

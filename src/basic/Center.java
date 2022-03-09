@@ -2,7 +2,6 @@ package basic;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import utils.RequirementReader;
 import utils.TeacherListReader;
 
 public class Center {
@@ -10,12 +9,18 @@ public class Center {
   Administrator administrator;
   ArrayList<Teacher> teacherList;
   Requirement requirement;
+  public static String requirementPath;
+  public static String databasePath;
 
   public Center() throws IOException {
     courseDirector = new CourseDirector();
     administrator = new Administrator();
     // load teachers
     teacherList = TeacherListReader.loadTeacherList();
+    // path to requirement file
+    requirementPath = "src/conf/requirement.txt";
+    // path to database file
+    databasePath = "src/conf/teachers.txt";
   }
 
   public CourseDirector getCourseDirector() {
