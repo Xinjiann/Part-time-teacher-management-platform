@@ -1,5 +1,6 @@
 package utils;
 
+import basic.Center;
 import basic.Teacher;
 import java.io.File;
 import java.io.FileWriter;
@@ -17,7 +18,7 @@ public class TeacherListWriter {
   }
 
   private static String listToString(ArrayList<Teacher> teacherList) {
-    String out = "";
+    String out = Center.title + "\n";
     for (Teacher teacher : teacherList) {
       out += teacher.toString() + "\n";
     }

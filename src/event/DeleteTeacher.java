@@ -13,10 +13,18 @@ public class DeleteTeacher implements Task {
     for (Teacher teacher : teachers) {
       if (teacher.getId() == teacherDTO.getTeacherId()) {
         teachers.remove(teacher);
+        this.resetId(teachers, center);
         System.out.println("Success removed teacher " + teacher.getName());
         return;
       }
     }
     System.out.println("Teacher not found");
+  }
+
+  private void resetId(ArrayList<Teacher> teachers, Center center) {
+    for (Teacher teacher : teachers) {
+      teacher.setId(teachers.indexOf(teacher)+1);
+    }
+    center.setTeacherList(teachers);
   }
 }

@@ -16,11 +16,11 @@ public class Main {
         Administrator administrator = center.getAdministrator();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("please choose your character:\n1.course director  2.administrator  3.quit");
+        System.out.println("please choose your character:\n1.course director  \n2.administrator  \n3.quit");
         int input = scanner.nextInt();
         switch (input) {
             case 1:
-                courseDirector.generateRequirement(center, scanner);
+                courseDirector.generateRequirement(scanner);
                 break;
             case 2:
                 administrator.manageDatabase(scanner, center);

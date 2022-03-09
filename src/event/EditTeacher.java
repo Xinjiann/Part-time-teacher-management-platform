@@ -14,7 +14,7 @@ public class EditTeacher implements Task {
     ArrayList<Teacher> teachers = center.getTeacherList();
     for (Teacher teacher :teachers) {
       if (teacher.getId() == teacherDTO.getTeacherId()) {
-        System.out.println("Teacher found: \n" + teacher);
+        System.out.println("Teacher found: \n" + Center.title + "\n" + teacher);
         target = teacher;
         break;
       }

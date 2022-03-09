@@ -40,9 +40,9 @@ public class Teacher {
   @Override
   public String toString() {
 
-    return String.format("%-6s", id) + String.format("%-16s", name) + String.format("%-6s",
-        workingExperiment) + String.format("%-6s", teachingAbilityScore) + String.format("%-6s",
-        classAtmosphereScore) + String.format("%-6s", communicationScore) + String.format("%-6s", studentSatisfaction);
+    return String.format("%-6s", id) + String.format("%-22s", name) + String.format("%-19s",
+        workingExperiment) + String.format("%-18s", teachingAbilityScore) + String.format("%-18s",
+        classAtmosphereScore) + String.format("%-18s", communicationScore) + String.format("%-18s", studentSatisfaction);
   }
 
   public int getId() {

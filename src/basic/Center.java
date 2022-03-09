@@ -11,6 +11,7 @@ public class Center {
   Requirement requirement;
   public static String requirementPath;
   public static String databasePath;
+  public static String title;
 
   public Center() throws IOException {
     courseDirector = new CourseDirector();
@@ -21,6 +22,7 @@ public class Center {
     requirementPath = "src/conf/requirement.txt";
     // path to database file
     databasePath = "src/conf/teachers.txt";
+    title = "id    name            workExperiment    teachingAbility   classAtmosphere    communication   studentSatisfaction";
   }
 
   public CourseDirector getCourseDirector() {

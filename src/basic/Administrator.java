@@ -28,7 +28,7 @@ public class Administrator {
         teachers.add(teacher);
       }
     }
-    System.out.println("Teachers need to be trained are:");
+    System.out.println("Teachers need to be trained are:\n\n"+Center.title);
     for (Teacher teacher : teachers) {
       System.out.println(teacher);
     }

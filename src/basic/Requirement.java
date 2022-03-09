@@ -19,6 +19,16 @@ public class Requirement {
     this.studentSatisfaction = studentSatisfaction;
   }
 
+  @Override
+  public String toString() {
+    return
+        "minimum working experience: " + workingExperience +
+        "\nminimum teaching ability score: " + teachingAbilityScore +
+        "\nminimum class atmosphere score: " + classAtmosphereScore +
+        "\nminimum communication score: " + communicationScore +
+        "\nminimum student satisfaction: " + studentSatisfaction;
+  }
+
   public int getWorkingExperience() {
     return workingExperience;
   }

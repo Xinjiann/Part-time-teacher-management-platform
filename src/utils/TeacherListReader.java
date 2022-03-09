@@ -1,6 +1,5 @@
 package utils;
 
-import basic.Requirement;
 import basic.Teacher;
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TeacherListReader {
 
@@ -19,15 +17,20 @@ public class TeacherListReader {
     InputStreamReader reader = new InputStreamReader(new FileInputStream(file));
     BufferedReader br = new BufferedReader(reader);
     String line = "";
+    int i = 0;
     while ((line = br.readLine()) != null) {
-      String[] split = line.trim().split("\\s+");
-      Teacher teacher = new Teacher(Integer.parseInt(split[0]), split[1],
-          Integer.parseInt(split[2]), Integer.parseInt(split[3]), Integer.parseInt(split[4]),
-          Integer.parseInt(split[5]), Integer.parseInt(split[6]));
-      teacherList.add(teacher);
+      if (i!=0){
+        String[] split = line.trim().split("\\s+");
+        Teacher teacher = new Teacher(Integer.parseInt(split[0]), split[1],
+            Integer.parseInt(split[2]), Integer.parseInt(split[3]), Integer.parseInt(split[4]),
+            Integer.parseInt(split[5]), Integer.parseInt(split[6]));
+        teacherList.add(teacher);
+      }
+      i++;
     }
     reader.close();
     br.close();
+
     return teacherList;
   }
 

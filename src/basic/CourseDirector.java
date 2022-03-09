@@ -2,6 +2,7 @@ package basic;
 
 import java.io.IOException;
 import java.util.Scanner;
+import utils.RequirementReader;
 import utils.RequirementWriter;
 
 public class CourseDirector {
@@ -9,8 +10,24 @@ public class CourseDirector {
   public CourseDirector() {
   }
 
-  public void generateRequirement(Center center, Scanner scanner) throws IOException {
+  public void generateRequirement(Scanner scanner) throws IOException {
 
+    System.out.println("please choose the action you want:\n1. check requirement\n2. set up new requirement");
+    int option = scanner.nextInt();
+    switch (option) {
+      case 1:
+        System.out.println("\nThe exist requirements are:");
+        System.out.println(RequirementReader.loadRequirement());
+        break;
+      case 2:
+        this.setRequirement(scanner);
+        System.out.println("Done!");
+        break;
+    }
+
+  }
+
+  private void setRequirement(Scanner scanner) throws IOException {
     System.out.println("please set the requirement");
     System.out.println("1/5 minimum work experiment (year):");
     int workingExperience = scanner.nextInt();
@@ -27,10 +44,8 @@ public class CourseDirector {
         classAtmosphereScore, communicationScore, studentSatisfaction);
 
     RequirementWriter.writeRequirement(requirement);
-//    Requirement requirement = RequirementReader.loadRequirement();
-//    center.setRequirement(requirement);
-
   }
+
 
 
 }
