@@ -16,16 +16,22 @@ public class Main {
         Administrator administrator = center.getAdministrator();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("please choose your character:\n1.course director  \n2.administrator  \n3.quit");
-        int input = scanner.nextInt();
-        switch (input) {
-            case 1:
-                courseDirector.generateRequirement(scanner);
-                break;
-            case 2:
-                administrator.manageDatabase(scanner, center);
-                break;
+        boolean flag = true;
+        while (flag) {
+            System.out.println("\nPlease choose your character:\n1.Course director  \n2.Administrator  \n3.Quit");
+            int input = scanner.nextInt();
+            switch (input) {
+                case 1:
+                    courseDirector.generateRequirement(scanner);
+                    break;
+                case 2:
+                    administrator.manageDatabase(scanner, center);
+                    break;
+                case 3:
+                    flag = false;
+            }
         }
+
         scanner.close();
 
         TeacherListWriter.writeTeacherList(center.getTeacherList());

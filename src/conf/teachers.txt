@@ -1,7 +1,8 @@
 id    name            workExperiment    teachingAbility   classAtmosphere    communication   studentSatisfaction
-1     test                  3                  4                 4                 1                 4
-2     steve                 3                  3                 5                 2                 5
-3     perfectTeacher        5                  5                 5                 5                 5
-4     test                  3                  4                 4                 2                 1
-5     xxx                   2                  2                 2                 4                 5
-6     e                     2                  3                 3                 5                 2
+1     David                 3                  4                 4                 1                 4                 
+2     Steve                 3                  3                 5                 2                 5                 
+3     PerfectTeacher        5                  5                 5                 5                 5                 
+4     Jake                  3                  4                 4                 2                 1                 
+5     Emma                  2                  2                 2                 4                 5                 
+6     Olivia                2                  3                 3                 5                 2                 
+7     Allen                 3                  1                 1                 1                 3                 
