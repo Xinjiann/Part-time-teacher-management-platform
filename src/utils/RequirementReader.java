@@ -1,5 +1,6 @@
 package utils;
 
+import basic.Center;
 import basic.Requirement;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +13,7 @@ public class RequirementReader {
 
   public static Requirement loadRequirement() throws IOException {
     ArrayList<Integer> list = new ArrayList<>();
-    String path = "src/conf/requirement.txt";
+    String path = Center.requirementPath;
     File file = new File(path);
     InputStreamReader reader = new InputStreamReader(new FileInputStream(file));
     BufferedReader br = new BufferedReader(reader);

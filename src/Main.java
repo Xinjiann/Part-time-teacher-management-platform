@@ -3,6 +3,7 @@ import basic.Center;
 import basic.CourseDirector;
 import java.io.IOException;
 import java.util.Scanner;
+import utils.RequirementWriter;
 import utils.TeacherListWriter;
 
 public class Main {
@@ -22,7 +23,7 @@ public class Main {
             int input = scanner.nextInt();
             switch (input) {
                 case 1:
-                    courseDirector.generateRequirement(scanner);
+                    courseDirector.generateRequirement(scanner, center);
                     break;
                 case 2:
                     administrator.manageDatabase(scanner, center);
@@ -34,6 +35,7 @@ public class Main {
 
         scanner.close();
 
+        RequirementWriter.writeRequirement(center.getRequirement());
         TeacherListWriter.writeTeacherList(center.getTeacherList());
     }
 }

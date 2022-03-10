@@ -10,7 +10,7 @@ public class CourseDirector {
   public CourseDirector() {
   }
 
-  public void generateRequirement(Scanner scanner) throws IOException {
+  public void generateRequirement(Scanner scanner, Center center) throws IOException {
 
     System.out.println("please choose the action you want:\n1. check requirement\n2. set up new requirement");
     int option = scanner.nextInt();
@@ -20,30 +20,30 @@ public class CourseDirector {
         System.out.println(RequirementReader.loadRequirement());
         break;
       case 2:
-        this.setRequirement(scanner);
+        this.setRequirement(center, scanner);
         System.out.println("Done!");
         break;
     }
 
   }
 
-  private void setRequirement(Scanner scanner) throws IOException {
+  private void setRequirement(Center center, Scanner scanner) throws IOException {
     System.out.println("please set the requirement");
     System.out.println("1/5 minimum work experiment (year):");
     int workingExperience = scanner.nextInt();
+    center.getRequirement().setWorkingExperience(workingExperience);
     System.out.println("2/5 minimum teaching ability score (1-5):");
     int teachingAbilityScore = scanner.nextInt();
+    center.getRequirement().setTeachingAbilityScore(teachingAbilityScore);
     System.out.println("3/5 minimum class atmosphere score (1-5):");
     int classAtmosphereScore = scanner.nextInt();
+    center.getRequirement().setClassAtmosphereScore(classAtmosphereScore);
     System.out.println("4/5 minimum communication score (1-5):");
     int communicationScore = scanner.nextInt();
+    center.getRequirement().setCommunicationScore(communicationScore);
     System.out.println("5/5 minimum student satisfaction (1-5):");
     int studentSatisfaction = scanner.nextInt();
-
-    Requirement requirement = new Requirement(workingExperience, teachingAbilityScore,
-        classAtmosphereScore, communicationScore, studentSatisfaction);
-
-    RequirementWriter.writeRequirement(requirement);
+    center.getRequirement().setStudentSatisfaction(studentSatisfaction);
   }
 
 

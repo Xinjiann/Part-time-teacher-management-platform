@@ -10,7 +10,8 @@ import java.util.ArrayList;
 public class TeacherListWriter {
 
   public static void writeTeacherList(ArrayList<Teacher> teacherList) throws IOException {
-    File file = new File("src/conf/teachers.txt");
+    String path = Center.databasePath;
+    File file = new File(path);
     FileWriter fw = new FileWriter(file,false);
     String output = listToString(teacherList);
     fw.write(output);

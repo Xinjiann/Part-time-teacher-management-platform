@@ -12,7 +12,6 @@ public class Teacher {
   private int communicationScore;
   private int studentSatisfaction;
 
-
   public Teacher() {
   }
 

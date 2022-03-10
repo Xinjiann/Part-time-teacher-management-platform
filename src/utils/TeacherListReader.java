@@ -1,5 +1,6 @@
 package utils;
 
+import basic.Center;
 import basic.Teacher;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +13,7 @@ public class TeacherListReader {
 
   public static ArrayList<Teacher> loadTeacherList() throws IOException {
     ArrayList<Teacher> teacherList = new ArrayList<Teacher>();
-    String path = "src/conf/teachers.txt";
+    String path = Center.databasePath;
     File file = new File(path);
     InputStreamReader reader = new InputStreamReader(new FileInputStream(file));
     BufferedReader br = new BufferedReader(reader);

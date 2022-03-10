@@ -2,6 +2,7 @@ package basic;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import utils.RequirementReader;
 import utils.TeacherListReader;
 
 public class Center {
@@ -16,12 +17,14 @@ public class Center {
   public Center() throws IOException {
     courseDirector = new CourseDirector();
     administrator = new Administrator();
-    // load teachers
-    teacherList = TeacherListReader.loadTeacherList();
     // path to requirement file
     requirementPath = "src/conf/requirement.txt";
     // path to database file
     databasePath = "src/conf/teachers.txt";
+    // load requirement
+    requirement = RequirementReader.loadRequirement();
+    // load teachers
+    teacherList = TeacherListReader.loadTeacherList();
     title = "id    name            workExperiment    teachingAbility   classAtmosphere    communication   studentSatisfaction";
   }
 
@@ -29,16 +32,9 @@ public class Center {
     return courseDirector;
   }
 
-  public void setCourseDirector(CourseDirector courseDirector) {
-    this.courseDirector = courseDirector;
-  }
 
   public Administrator getAdministrator() {
     return administrator;
-  }
-
-  public void setAdministrator(Administrator administrator) {
-    this.administrator = administrator;
   }
 
   public ArrayList<Teacher> getTeacherList() {
