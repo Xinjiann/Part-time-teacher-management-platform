@@ -3,7 +3,6 @@ package basic;
 import java.io.IOException;
 import java.util.Scanner;
 import utils.RequirementReader;
-import utils.RequirementWriter;
 
 public class CourseDirector {
 

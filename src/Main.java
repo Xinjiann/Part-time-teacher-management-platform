@@ -10,8 +10,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-
-
         Center center = new Center();
         CourseDirector courseDirector = center.getCourseDirector();
         Administrator administrator = center.getAdministrator();
@@ -31,11 +29,12 @@ public class Main {
                 case 3:
                     flag = false;
             }
+            RequirementWriter.writeRequirement(center.getRequirement());
+            TeacherListWriter.writeTeacherList(center.getTeacherList());
         }
 
         scanner.close();
 
-        RequirementWriter.writeRequirement(center.getRequirement());
-        TeacherListWriter.writeTeacherList(center.getTeacherList());
+
     }
 }
