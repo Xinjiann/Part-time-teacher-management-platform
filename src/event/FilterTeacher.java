@@ -6,7 +6,6 @@ import basic.Teacher;
 import basic.dto.TeacherDTO;
 import java.io.IOException;
 import java.util.ArrayList;
-import utils.RequirementReader;
 
 public class FilterTeacher implements Task{
 

@@ -12,6 +12,7 @@ public class EditTeacher implements Task {
   public void execute(Center center, TeacherDTO teacherDTO) {
     Teacher target = null;
     ArrayList<Teacher> teachers = center.getTeacherList();
+    // first find teacher by id
     for (Teacher teacher :teachers) {
       if (teacher.getId() == teacherDTO.getTeacherId()) {
         System.out.println("Teacher found: \n" + Center.title + "\n" + teacher);
@@ -22,6 +23,7 @@ public class EditTeacher implements Task {
     if (target == null) {
       System.out.println("Teacher not found.");
     } else {
+      // edit teacher info
       Scanner scanner = new Scanner(System.in);
       System.out.println("1/6 Please input the teacher's name: ");
       target.setName(scanner.next());

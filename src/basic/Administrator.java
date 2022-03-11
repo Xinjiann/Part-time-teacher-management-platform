@@ -8,9 +8,7 @@ import event.FilterTeacher;
 import event.FindTeacher;
 import event.Task;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
-import utils.RequirementReader;
 
 public class Administrator {
 
@@ -69,6 +67,7 @@ public class Administrator {
   }
 
   private void addTeacher(Scanner scanner, TeacherDTO teacherDTO) {
+    // build teacherDto
     System.out.println("1/6 Please input the teacher's name: ");
     teacherDTO.setName(scanner.next());
     System.out.println("2/6 Please input the teacher's work experiment (year): ");
